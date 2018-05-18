@@ -72,7 +72,7 @@ trn_feat = pd.read_csv(file_feat_trn, header=None)
 # normalize features
 trn_feat = (trn_feat - trn_feat.min())/(trn_feat.max() - trn_feat.min())
 X_train = reshape_data(trn_feat)
-trn_emo_raw = pd.read_csv(file_emo_trn, header=None, usecols=[0])
+trn_emo_raw = pd.read_csv(file_emo_trn, header=None, usecols=[0]) # Arousal
 trn_emo_raw = trn_emo_raw.values
 # one-hot encoding of the classes
 trn_emo = []
@@ -108,7 +108,7 @@ tst_feat = pd.read_csv(file_feat_tst, header=None)
 # normalize features
 tst_feat = (tst_feat - tst_feat.min())/(tst_feat.max() - tst_feat.min())
 X_test = reshape_data(tst_feat)
-tst_emo_raw = pd.read_csv(file_emo_tst, header=None, usecols=[0])
+tst_emo_raw = pd.read_csv(file_emo_tst, header=None, usecols=[0]) # Arousal
 tst_emo_raw = tst_emo_raw.values
 # one-hot encoding of the classes
 tst_emo = []
