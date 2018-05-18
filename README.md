@@ -1,2 +1,2 @@
 # Thesis-EmotionRecognition
-Example codes for my PhD work on recognizing dimensional emotions in spoken dialogue
+Example codes for some of my PhD work on recognizing dimensional emotions in spoken dialogue
