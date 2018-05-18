@@ -1,4 +1,4 @@
-# LSTM emotion classification using GP+DIS-NV features, train on both databases and test on a subset of AVEC
+# LSTM emotion classification using GP+DIS-NV features, train on both databases and test on a subset of the AVEC database
 
 # import the required modules
 from __future__ import print_function
