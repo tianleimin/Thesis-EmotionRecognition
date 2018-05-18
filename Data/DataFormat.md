@@ -1,4 +1,4 @@
-Explaination of the data files:
+# Explaination of the data files
 
 Databases:
 
