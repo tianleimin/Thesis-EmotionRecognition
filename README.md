@@ -1,6 +1,8 @@
 # Thesis-EmotionRecognition
 Example codes for some of my PhD work on recognizing dimensional emotions
 
+For modality fusion see **ACL2018-MultimodalMultitaskSentimentAnalysis**
+
 Disfluency and Non-verbal Vocalisation (DIS-NV) features for emotion recognition in spoken dialogue:
 
 ```latex
