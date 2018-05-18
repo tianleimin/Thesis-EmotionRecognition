@@ -43,8 +43,8 @@ nb_features = 3
 # data files
 file_log = 'CV_IEMOCAP_GP_A_log.txt'
 file_pred = 'CV_IEMOCAP_GP_A_pred.txt'
-file_emo = '/Data/IEMOCAP_emo.csv'
-file_feat = '/Data/IEMOCAP_GP.csv'
+file_emo = 'Data/IEMOCAP_emo.csv'
+file_feat = 'Data/IEMOCAP_GP.csv'
 
 # turn off the warnings, be careful when use this
 import warnings
