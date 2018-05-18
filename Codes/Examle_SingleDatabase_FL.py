@@ -1,4 +1,4 @@
-# use Keras LSTM to build multimodal LSTM regression model with FL fusion
+# use Keras LSTM to build multimodal LSTM regression model with Feature Level (FL) fusion
 
 # import the required modules
 from __future__ import print_function
