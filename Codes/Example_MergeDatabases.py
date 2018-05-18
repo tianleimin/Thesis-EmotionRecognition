@@ -78,7 +78,7 @@ tst_feat = (tst_feat - tst_feat.min())/(tst_feat.max() - tst_feat.min())
 all_feat = pd.concat([trn_feat,tst_feat])
 X = reshape_data(all_feat)
 
-trn_emo_raw = pd.read_csv(file_emo_trn, header=None, usecols=[0])
+trn_emo_raw = pd.read_csv(file_emo_trn, header=None, usecols=[0]) # Arousal
 trn_emo_raw = trn_emo_raw.values
 # one-hot encoding of the classes
 trn_emo = []
@@ -93,7 +93,7 @@ for label in trn_emo_raw:
 y_train = np.asarray(trn_emo)
 y_train_df = pd.DataFrame(y_train, index=None)
 
-tst_emo_raw = pd.read_csv(file_emo_tst, header=None, usecols=[0])
+tst_emo_raw = pd.read_csv(file_emo_tst, header=None, usecols=[0]) # Arousal
 tst_emo_raw = tst_emo_raw.values
 # one-hot encoding of the classes
 tst_emo = []
