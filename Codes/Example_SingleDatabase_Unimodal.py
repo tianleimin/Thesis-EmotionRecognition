@@ -41,10 +41,10 @@ nb_features = 3
 # total number of features, also the number of neurons in the input layer
 
 # data files
-file_log = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/Outputs/CV_IEMOCAP_GP_A_log.txt'
-file_pred = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/Outputs/CV_IEMOCAP_GP_A_pred.txt'
-file_emo = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/IEMOCAP_emo.csv'
-file_feat = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/IEMOCAP_GP.csv'
+file_log = 'CV_IEMOCAP_GP_A_log.txt'
+file_pred = 'CV_IEMOCAP_GP_A_pred.txt'
+file_emo = '/Data/IEMOCAP_emo.csv'
+file_feat = '/Data/IEMOCAP_GP.csv'
 
 # turn off the warnings, be careful when use this
 import warnings
