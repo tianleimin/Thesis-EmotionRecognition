@@ -1,4 +1,4 @@
-# LSTM emotion classification using GP+DIS-NV features, train and test on IEMOCAP
+# LSTM emotion classification using GP features, train and test on IEMOCAP
 
 # import the required modules
 from __future__ import print_function
@@ -37,14 +37,14 @@ opt_func = Adamax(lr=0.0005, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
 # if the validation loss isn't decreasing for a number of epochs, stop training to prevent over-fitting
 early_stopping = EarlyStopping(monitor='val_loss', patience=100)
 
-nb_features = 8
+nb_features = 3
 # total number of features, also the number of neurons in the input layer
 
 # data files
-file_log = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/Outputs/CV_IEMOCAP_GP+DN_A_log.txt'
-file_pred = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/Outputs/CV_IEMOCAP_GP+DN_A_pred.txt'
+file_log = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/Outputs/CV_IEMOCAP_GP_A_log.txt'
+file_pred = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/Outputs/CV_IEMOCAP_GP_A_pred.txt'
 file_emo = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/IEMOCAP_emo.csv'
-file_feat = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/IEMOCAP_GP+DN.csv'
+file_feat = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/IEMOCAP_GP.csv'
 
 # turn off the warnings, be careful when use this
 import warnings
@@ -72,7 +72,7 @@ data_feat = pd.read_csv(file_feat, header=None)
 # normalize features
 data_feat = (data_feat - data_feat.min())/(data_feat.max() - data_feat.min())
 X = reshape_data(data_feat)
-emo_raw = pd.read_csv(file_emo, header=None, usecols=[0])
+emo_raw = pd.read_csv(file_emo, header=None, usecols=[0]) # Arousal
 emo_raw = emo_raw.values
 # one-hot encoding of the classes
 data_emo = []
