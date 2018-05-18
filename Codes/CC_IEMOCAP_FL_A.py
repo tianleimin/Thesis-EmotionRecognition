@@ -1,4 +1,4 @@
-# LSTM emotion classification using GP+DIS-NV features, train on AVEC2012 and test on IEMOCAP
+# LSTM emotion classification using GP+DIS-NV features, train on AVEC2012 database and test on IEMOCAP database
 
 # import the required modules
 from __future__ import print_function
