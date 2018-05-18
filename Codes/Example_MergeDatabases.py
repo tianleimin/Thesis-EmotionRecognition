@@ -40,12 +40,12 @@ nb_features = 8
 # total number of features, also the number of neurons in the input layer
 
 # data files
-file_log = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/Outputs/CC_Both_GP+DN_A_log.txt'
-file_pred = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/Outputs/CC_Both_GP+DN_A_pred.txt'
-file_emo_trn = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/IEMOCAP_emo.csv'
-file_feat_trn = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/IEMOCAP_GP+DN.csv'
-file_emo_tst = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/utt_AVEC_emo.csv'
-file_feat_tst = '/exports/csce/datastore/inf/groups/eddie_inf_hcrc_cstr_students/s1219694/TAC2018/utt_AVEC_GP+DN.csv'
+file_log = 'CC_Both_GP+DN_A_log.txt'
+file_pred = 'CC_Both_GP+DN_A_pred.txt'
+file_emo_trn = 'Data/IEMOCAP_emo.csv'
+file_feat_trn = 'Data/IEMOCAP_GP+DN.csv'
+file_emo_tst = 'Data/utt_AVEC_emo.csv'
+file_feat_tst = 'Data/utt_AVEC_GP+DN.csv'
 
 # turn off the warnings, be careful when use this
 import warnings
