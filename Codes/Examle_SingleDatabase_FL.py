@@ -44,9 +44,9 @@ nb_features = nb_GP_features + nb_DN_features # total number of features, also t
 # data files
 file_log = 'CV_IEMOCAP_FL_A_log.txt'
 file_pred = 'CV_IEMOCAP_FL_A_pred.txt'
-file_emo = '/Data/IEMOCAP_emo.csv'
-file_feat1 = '/Data/IEMOCAP_GP.csv'
-file_feat2 = '/Data/IEMOCAP_DIS-NV.csv'
+file_emo = 'Data/IEMOCAP_emo.csv'
+file_feat1 = 'Data/IEMOCAP_GP.csv'
+file_feat2 = 'Data/IEMOCAP_DIS-NV.csv'
 
 # turn off the warnings, be careful when use this
 import warnings
