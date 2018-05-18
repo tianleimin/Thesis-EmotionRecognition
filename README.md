@@ -17,12 +17,6 @@ Disfluency and Non-verbal Vocalisation (DIS-NV) features for emotion recognition
 Differences between spontaneous and acted dialogue:
 
 ```latex
-@inproceedings{laughterworkshop,
-  title={RECOGNIZING EMOTIONS IN DIALOGUES WITH DISFLUENCIES AND NON-VERBAL VOCALISATIONS},
-  author={Tian, Leimin and Lai, Catherine and Moore, Johanna},
-  booktitle={Proceedings of the 4th Interdisciplinary Workshop on Laughter and Other Non-verbal Vocalisations in Speech},
-  year={2015}
-}
 @inproceedings{ACIImain,
   title={Emotion recognition in spontaneous and acted dialogues},
   author={Tian, Leimin and Moore, Johanna D and Lai, Catherine},
@@ -39,7 +33,7 @@ Applying to movie emotion recognition:
 @inproceedings{tian2017recognizing,
   title={Recognizing induced emotions of movie audiences: Are induced and perceived emotions the same?},
   author={Tian, Leimin and Muszynski, Michal and Lai, Catherine and Moore, Johanna D and Kostoulas, Theodoros and Lombardo, Patrizia and Pun, Thierry and Chanel, Guillaume},
-  booktitle={Proceedings of 7th International Conference on Affective Computing and Intelligent Interaction (ACII'17)},
+  booktitle={Proceedings of 7th International Conference on Affective Computing and Intelligent Interaction},
   year={2017},
   pages={28--35},
   publisher={IEEE},
