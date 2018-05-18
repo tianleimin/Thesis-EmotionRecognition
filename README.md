@@ -20,7 +20,7 @@ Differences between spontaneous and acted dialogue:
 @inproceedings{ACIImain,
   title={Emotion recognition in spontaneous and acted dialogues},
   author={Tian, Leimin and Moore, Johanna D and Lai, Catherine},
-  booktitle={Proceedings of the 2015 International Conference on Affective Computing and Intelligent Interaction (ACII)},
+  booktitle={Proceedings of the 2015 International Conference on Affective Computing and Intelligent Interaction},
   pages={698--704},
   year={2015},
   organization={IEEE}
