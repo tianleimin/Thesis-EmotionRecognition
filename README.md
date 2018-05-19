@@ -9,7 +9,7 @@ These are all unimodal emotion recognition models. For multimodal emotion recogn
 Disfluency and Non-verbal Vocalisation (DIS-NV) features for emotion recognition in spoken dialogue:
 
 ```latex
-@inproceedings{CICLing,
+@inproceedings{moore2014word,
   title={Word-Level Emotion Recognition Using High-Level Features},
   author={Moore, Johanna and Tian, Leimin and Lai, Catherine},
   booktitle={Computational Linguistics and Intelligent Text Processing},
@@ -22,7 +22,7 @@ Disfluency and Non-verbal Vocalisation (DIS-NV) features for emotion recognition
 Differences between spontaneous and acted dialogue:
 
 ```latex
-@inproceedings{ACIImain,
+@inproceedings{tian2015emotion,
   title={Emotion recognition in spontaneous and acted dialogues},
   author={Tian, Leimin and Moore, Johanna D and Lai, Catherine},
   booktitle={Proceedings of the 2015 International Conference on Affective Computing and Intelligent Interaction},
