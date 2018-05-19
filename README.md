@@ -1,7 +1,7 @@
 # Thesis-EmotionRecognition
 Example codes for some of my PhD work on recognizing dimensional emotions
 
-For modality fusion see **ACL2018-MultimodalMultitaskSentimentAnalysis**
+These are all unimodal emotion recognition models. For multimodal emotion recognition with different modality fusion strategies see **ACL2018-MultimodalMultitaskSentimentAnalysis**
 
 ## Some references:
 
@@ -31,7 +31,7 @@ Differences between spontaneous and acted dialogue:
 }
 ```
 
-Applying to movie emotion recognition:
+Application to predicting movie-induced emotions:
 
 ```latex
 @inproceedings{tian2017recognizing,
