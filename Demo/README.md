@@ -1,4 +1,6 @@
-# Demo for emotion recognition
+# Demo of Emotion Recognition
+
+A demo of predicting binary Arousal and Valence from speech recording and transcript
 
 All codes written in Python 2.7.13.
 
