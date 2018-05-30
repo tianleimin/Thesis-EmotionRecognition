@@ -90,6 +90,8 @@ A1 = mpimg.imread('PusheenEmotion/Awake.png')
 A0 = mpimg.imread('PusheenEmotion/Asleep.png')
 
 # emotion of the whole recording is the average of all sentences
+print('P(+Arousal) = '+str('%.6f'%(sum(demo_pred_A)/len(demo_pred_A))))
+print('P(+Valence) = '+str('%.6f'%(sum(demo_pred_V)/len(demo_pred_V))))
 if sum(demo_pred_A)/len(demo_pred_A) < 0.5:
     Arousal = 'Arousal: Calm'
     _ = image1.imshow(A0)
