@@ -51,8 +51,8 @@ print("Loaded model from disk")
  
 # evaluate loaded model on test data
 # read in test data
-file_aud_tst = 'test/en_6313-A_test_eGeMAPS.csv'
-file_lex_tst = 'test/en_6313-A_test_CSA.csv'
+file_aud_tst = 'test/en_4065_test_eGeMAPS.csv'
+file_lex_tst = 'test/en_4065_test_CSA.csv'
 tst_aud_feat = pd.read_csv(file_aud_tst, header=None)
 tst_lex_feat = pd.read_csv(file_lex_tst, header=None)
 
