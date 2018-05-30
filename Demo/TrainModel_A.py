@@ -47,7 +47,7 @@ time_step = 5  # the length of history (number of previous data instances) to in
 batch_size = 5
 nb_epoch = 1000 # number of total epochs to train the model
 # if the validation loss isn't decreasing for a number of epochs, stop training to prevent over-fitting
-early_stopping = EarlyStopping(monitor='val_loss', patience=5)
+early_stopping = EarlyStopping(monitor='val_loss', patience=100)
 
 opt_func = Adamax(lr=0.0005, beta_1=0.9, beta_2=0.999, epsilon=1e-08) # optimization function
 
