@@ -67,7 +67,7 @@ tst_lex_feat = (tst_lex_feat - tst_lex_feat.min())/(tst_lex_feat.max() - tst_lex
 
 # FL fusion
 all_feat_tst = pd.concat([tst_aud_feat, tst_lex_feat], axis=1)
-# expand the length by 5 times
+# expand the length by 5 times in case of recording shorter than 25s
 all_feat_mult_tst = pd.concat([all_feat_tst, all_feat_tst, all_feat_tst, all_feat_tst, all_feat_tst], axis=0)
 demo_test = reshape_data(all_feat_mult_tst)
 
