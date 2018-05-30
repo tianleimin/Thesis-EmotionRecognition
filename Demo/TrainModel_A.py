@@ -1,5 +1,6 @@
-# train Arousal prediction model with IEMOCAP data
+# train Arousal prediction model with uttAVE+IEMOCAP
 # FL fusion: audio (opensmile-eGeMAPS) + lexical (CSA)
+# feel free to play with different recognition models and learning techniques
 
 from __future__ import print_function
 import numpy as np
@@ -30,9 +31,12 @@ logger = open("output/output_A.txt", "w")
 sys.stdout = logger
 
 # data files
-file_emo_trn = 'data/IEMOCAP_biemo.csv'
-file_aud_trn = 'data/IEMOCAP_GeMAPS.csv'
-file_lex_trn = 'data/IEMOCAP_CSA.csv'
+A_emo = 'data/uttAVEC_biAV.csv'
+A_aud = 'data/uttAVEC_GeMAPS.csv'
+A_lex = 'data/uttAVEC_CSA.csv'
+I_emo = 'data/IEMOCAP_biAV.csv'
+I_aud = 'data/IEMOCAP_GeMAPS.csv'
+I_lex = 'data/IEMOCAP_CSA.csv'
 
 # meta parameters
 nb_aud_feat = 88 # dimensionality of feature set 1
@@ -59,12 +63,21 @@ def reshape_data(data, n_prev = time_step):
     return alsX
 
 # read in data
-trn_aud_feat = pd.read_csv(file_aud_trn, header=None)
-trn_lex_feat = pd.read_csv(file_lex_trn, header=None)
+A_aud_feat = pd.read_csv(A_aud, header=None)
+A_lex_feat = pd.read_csv(A_lex, header=None)
+
+I_aud_feat = pd.read_csv(I_aud, header=None)
+I_lex_feat = pd.read_csv(I_lex, header=None)
 
 # normalize features
-trn_aud_feat = (trn_aud_feat - trn_aud_feat.min())/(trn_aud_feat.max() - trn_aud_feat.min())
-trn_lex_feat = (trn_lex_feat - trn_lex_feat.min())/(trn_lex_feat.max() - trn_lex_feat.min())
+A_aud_feat = (A_aud_feat - A_aud_feat.min())/(A_aud_feat.max() - A_aud_feat.min())
+A_lex_feat = (A_lex_feat - A_lex_feat.min())/(A_lex_feat.max() - A_lex_feat.min())
+I_aud_feat = (I_aud_feat - I_aud_feat.min())/(I_aud_feat.max() - I_aud_feat.min())
+I_lex_feat = (I_lex_feat - I_lex_feat.min())/(I_lex_feat.max() - I_lex_feat.min())
+
+# combine the two databases
+trn_aud_feat = pd.concat([A_aud_feat,I_aud_feat])
+trn_lex_feat = pd.concat([A_lex_feat,I_lex_feat])
 
 ### save for normalizing the test data
 ##aud_min = trn_aud_feat.min()
@@ -80,7 +93,9 @@ all_feat_trn = pd.concat([trn_aud_feat, trn_lex_feat], axis=1)
 
 X = reshape_data(all_feat_trn)
 
-trn_emo_raw = pd.read_csv(file_emo_trn, header=None, usecols=[0])
+A_emo_raw = pd.read_csv(A_emo, header=None, usecols=[0])
+I_emo_raw = pd.read_csv(I_emo, header=None, usecols=[0])
+trn_emo_raw = pd.concat([A_emo_raw,I_emo_raw])
 trn_emo = trn_emo_raw.values
 y = np.asarray(trn_emo)
 
