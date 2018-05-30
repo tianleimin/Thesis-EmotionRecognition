@@ -44,10 +44,10 @@ nb_lex_feat = 63 # dimensionality of feature set 2
 nb_feat = nb_aud_feat + nb_lex_feat # total number of features, also the number of neurons in the input layer of LSTM
 
 time_step = 5  # the length of history (number of previous data instances) to include
-batch_size = 32
+batch_size = 5
 nb_epoch = 1000 # number of total epochs to train the model
 # if the validation loss isn't decreasing for a number of epochs, stop training to prevent over-fitting
-early_stopping = EarlyStopping(monitor='val_loss', patience=100)
+early_stopping = EarlyStopping(monitor='val_loss', patience=5)
 
 opt_func = Adamax(lr=0.0005, beta_1=0.9, beta_2=0.999, epsilon=1e-08) # optimization function
 
@@ -91,7 +91,7 @@ trn_emo = trn_emo_raw.values
 y = np.asarray(trn_emo)
 
 # save a subset of IEMOCAP for testing
-X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.1, shuffle=False)
+X_train, X_valid, y_train, y_valid = train_test_split(X, y, test_size=0.2, shuffle=True)
 
 print("Data preprocessing finished! Begin compiling and training model.")
 
