@@ -4,15 +4,15 @@
 # Sorry but I can't provide the original lex_input_f and aud_input_f due to data privacy concerns
 
 # lex_input_f is a csv file that contains at least 3 columns: starttime, endtime, word
-lex_input_f = 'test/en_6313.alignword.txt.full.csv' # transcript (word + word timings) of the test speech
-aud_input_f = 'test/en_6313-A.wav' # wav recording of the test speech
+lex_input_f = 'test/en_4065.alignword.txt.full.csv' # transcript (word + word timings) of the test speech
+aud_input_f = 'test/en_4065.wav' # wav recording of the test speech
 CSA_dict_f = 'pre-trained/CRR_WordsAndRatings_0mean.csv' # affective lexicon dictionary
-CSA_feat_f = 'test/en_6313-A_test_CSA.csv' # CSA feature output
+CSA_feat_f = 'test/en_4065_test_CSA.csv' # CSA feature output
 ffmpeg_bin = 'ffmpeg' # where you install your ffmpeg
 openSMILE_bin = 'opensmile-2.3.0/inst/bin/SMILExtract' # where you install your OpenSmile
 config = 'opensmile-2.3.0/config/gemaps/eGeMAPSv01a.conf' # configuration file of OpenSmile
-aud_output_f = 'test/en_6313-A_test_eGeMAPS.arff'
-aud_feat_f = 'test/en_6313-A_test_eGeMAPS.csv' # eGeMAPS feature output
+aud_output_f = 'test/en_4065_test_eGeMAPS.arff'
+aud_feat_f = 'test/en_4065_test_eGeMAPS.csv' # eGeMAPS feature output
 
 ########################### Extracting CSA features ############################
 # use nltk toolkit installed on Python 2.6
@@ -153,13 +153,13 @@ import time
 for i in range(len(uttST)):
     START_TIME = str(uttST[i])
     END_TIME = str(uttET[i])
-    chopped = 'test/wav_chopped/en_6313-A_'+str(i)+'.wav'
+    chopped = 'test/wav_chopped/en_4065_'+str(i)+'.wav'
     command1 = [ffmpeg_bin, '-i', aud_input_f, '-acodec', 'copy', '-ss', START_TIME, '-to', END_TIME, chopped]
     s1 = sp.Popen(command1,stderr=sp.PIPE)
 
 # run openSMILE to extract eGeMAPS features from the chopped recordings
 for i in range(len(uttST)):
-    chopped_input_f = 'test/wav_chopped/en_6313-A_'+str(i)+'.wav'
+    chopped_input_f = 'test/wav_chopped/en_4065_'+str(i)+'.wav'
     command2 = [openSMILE_bin,'-C',config,'-I',chopped_input_f,'-O',aud_output_f]
     s2 = sp.Popen(command2,stderr=sp.PIPE)
     outputline, error = s2.communicate()
