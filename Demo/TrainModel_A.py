@@ -44,10 +44,10 @@ nb_lex_feat = 63 # dimensionality of feature set 2
 nb_feat = nb_aud_feat + nb_lex_feat # total number of features, also the number of neurons in the input layer of LSTM
 
 time_step = 5  # the length of history (number of previous data instances) to include
-batch_size = 128
+batch_size = 32
 nb_epoch = 1000 # number of total epochs to train the model
 # if the validation loss isn't decreasing for a number of epochs, stop training to prevent over-fitting
-early_stopping = EarlyStopping(monitor='val_loss', patience=5)
+early_stopping = EarlyStopping(monitor='val_loss', patience=100)
 
 opt_func = Adamax(lr=0.0005, beta_1=0.9, beta_2=0.999, epsilon=1e-08) # optimization function
 
@@ -106,7 +106,7 @@ print("Data preprocessing finished! Begin compiling and training model.")
 
 # Building FL fusion model
 model = Sequential()
-model.add(LSTM(128, input_shape=(time_step, nb_feat), dropout_W=0.2, dropout_U=0.2, return_sequences=False))
+model.add(LSTM(64, input_shape=(time_step, nb_feat), dropout_W=0.2, dropout_U=0.2, return_sequences=False))
 model.add(Dense(32, activation='relu', W_regularizer=l2(0.0), trainable=True))
 model.add(Dense(32, activation='relu', W_regularizer=l2(0.0), trainable=True))
 model.add(Dense(32, activation='relu', W_regularizer=l2(0.0), trainable=True))
