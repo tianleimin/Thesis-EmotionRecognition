@@ -128,11 +128,9 @@ tst_df = pd.DataFrame(tst_pred)
 tst_df.to_csv(tst_pred_file, index=False, header=False)
 
 # print confusion matrix
-y_test_non_category = [ np.argmax(t) for t in y_valid ]
-y_predict_non_category = [ np.argmax(t) for t in tst_pred ]
 print('Confusion Matrix')
-print(confusion_matrix(y_test_non_category, y_predict_non_category))
-tst_f1 = f1_score(y_test_non_category, y_predict_non_category, average='weighted')
+print(confusion_matrix(y_valid, tst_pred))
+tst_f1 = f1_score(y_valid, tst_pred, average='weighted')
 print('Test F1-score:', tst_f1)
 
 # Save model and test with new data
