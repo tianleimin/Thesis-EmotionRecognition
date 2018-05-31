@@ -120,8 +120,8 @@ tst_df.to_csv(tst_pred_file, index=False, header=False)
 
 # print confusion matrix
 print('Confusion Matrix')
-print(confusion_matrix(y_valid, tst_pred))
-tst_f1 = f1_score(y_valid, tst_pred, average='weighted')
+print(confusion_matrix(y_valid, tst_pred.round()))
+tst_f1 = f1_score(y_valid, tst_pred.round(), average='weighted')
 print('Test F1-score:', tst_f1)
 
 # Save model and test with new data
