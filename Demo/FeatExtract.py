@@ -157,6 +157,13 @@ for i in range(len(uttST)):
     command1 = [ffmpeg_bin, '-i', aud_input_f, '-acodec', 'copy', '-ss', START_TIME, '-to', END_TIME, chopped]
     s1 = sp.Popen(command1,stderr=sp.PIPE)
 
+# remove old arff file if it exists to avoid appending to old file
+import os
+try:
+    os.remove(aud_output_f)
+except OSError:
+    pass
+
 # run openSMILE to extract eGeMAPS features from the chopped recordings
 for i in range(len(uttST)):
     chopped_input_f = 'test/wav_chopped/en_4065_'+str(i)+'.wav'
