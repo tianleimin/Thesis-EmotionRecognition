@@ -1,4 +1,4 @@
-# train Arousal prediction model with uttAVE+IEMOCAP
+# train Arousal prediction model with uttAVEC+IEMOCAP
 # FL fusion: audio (opensmile-eGeMAPS) + lexical (CSA)
 # feel free to play with different recognition models and learning techniques
 
