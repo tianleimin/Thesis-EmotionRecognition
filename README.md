@@ -1,7 +1,7 @@
 # Thesis-EmotionRecognition
-Example codes for some of my PhD work on recognizing dimensional emotions
+Example codes for some of my PhD work on recognizing dimensional emotions, including a little demo
 
-These are all **unimodal** emotion recognition models. For multimodal emotion recognition with different modality fusion strategies see 
+These are mostly **unimodal** emotion recognition models. For multimodal emotion recognition with different modality fusion strategies see 
 [ACL2018-MultimodalMultitaskSentimentAnalysis](https://github.com/tianleimin/ACL2018-MultimodalMultitaskSentimentAnalysis)
 
 ## Some references:
