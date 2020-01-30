@@ -147,7 +147,7 @@ for time_step in time_steps:
             model.compile(loss='categorical_crossentropy', optimizer=opt_func, metrics=['categorical_accuracy'])
             # training the model
             model.fit(X_train, y_train, batch_size=batch_size, nb_epoch=nb_epoch, 
-                      validation_split=0.05, callbacks=[early_stopping], verbose=0)
+                      validation_split=0.05, callbacks=[early_stopping], verbose=2)
             # evaluation
             model.evaluate(X_test, y_test, batch_size=batch_size)
 
