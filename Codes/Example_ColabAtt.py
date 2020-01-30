@@ -140,8 +140,7 @@ for time_step in time_steps:
         for attention_width in attention_widths:
             para_list.append([time_step, lstm_size, attention_width]) # save parameter set
             print('\n================================ No. %s of 27 ========================================' % count)
-            print('\nParameters: time_step = %s, [h1, h2, h3] = %s, attention_width = %s\n' 
-#                   % (time_step, lstm_size, attention_width))
+            print('\nParameters: time_step = %s, [h1, h2, h3] = %s, attention_width = %s\n' % (time_step, lstm_size, attention_width))
             # build model with given parameters
             model = attBLSTM(lstm_size, attention_width, nb_class, opt_func)
             # compile the model
@@ -167,8 +166,7 @@ for time_step in time_steps:
             # print grid search log
             with open(file_log, 'a') as logfile:
                 logfile.write('\n================================ No. %s of 27 ========================================' % count)
-                logfile.write('F1 = %s; Parameters: time_step = %s, [h1, h2, h3] = %s, attention_width = %s\n' 
-#                               % (tst_f1, time_step, lstm_size, attention_width))
+                logfile.write('F1 = %s; Parameters: time_step = %s, [h1, h2, h3] = %s, attention_width = %s\n' % (tst_f1, time_step, lstm_size, attention_width))
                 logfile.write('Confusion Matrix on test set')
                 logfile.write(confusion_matrix(y_test_non_category, y_predict_non_category))           
             count = count + 1
@@ -179,8 +177,7 @@ result = f1_list[best]
 para = para_list[best]
 prediction = tst_pred_list[best]
 with open(file_pred, 'a') as predfile:
-    predfile.write('F1 = %s; Parameters: time_step = %s, [h1,h2,h3] = %s, attention_width = %s\n' 
-#                    % (result, para[0], para[1], para[2]))
+    predfile.write('F1 = %s; Parameters: time_step = %s, [h1,h2,h3] = %s, attention_width = %s\n' % (result, para[0], para[1], para[2]))
     for pred in prediction:
         indi_pred = []
         indi_pred = pred[0] # reform the seq prediction to individual samples
