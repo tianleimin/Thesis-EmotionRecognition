@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-Using Google Colab (Python 3 + TPU) and BLSTM+Attention
-https://colab.research.google.com/
-"""
 
-# Commented out IPython magic to ensure Python compatibility.
+# Using Google Colab (Python 3 + TPU)
 # Attention-BLSTM emotion classification (Arousal)
 # Use GP+DIS-NV features, train on both databases and test on a subset of IEMOCAP
 
