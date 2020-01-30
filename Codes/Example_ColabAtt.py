@@ -57,8 +57,8 @@ from google.colab import drive
 drive.mount('/content/drive')
 file_log = '/content/drive/My Drive/ColabAtt_example_log.txt'
 file_pred = '/content/drive/My Drive/ColabAtt_example_pred.txt'
-file_emo_tst = '/content/drive/My Drive/IEMOCAP_emo.csv'
-file_feat_tst = '/content/drive/My Drive/IEMOCAP_GP+DN.csv'
+file_emo_tst = '/content/drive/My Drive/IEMOCAP_emo_seg.csv' # retained a subset for testing after parameter optimisation
+file_feat_tst = '/content/drive/My Drive/IEMOCAP_GP+DN_seg.csv' # retained a subset for testing after parameter optimisation
 file_emo_trn = '/content/drive/My Drive/utt_AVEC_emo.csv'
 file_feat_trn = '/content/drive/My Drive/utt_AVEC_GP+DN.csv'
 
@@ -145,7 +145,8 @@ for time_step in time_steps:
             model = attBLSTM(lstm_size, attention_width, nb_class, opt_func)
             # compile the model
             model.compile(loss='categorical_crossentropy', optimizer=opt_func, metrics=['categorical_accuracy'])
-            # training the model
+            # training the model, use the last 5% as the validation set
+            # remember to remove a subset of IEMOCAP/AVEC before reading in data as the seperate test set
             model.fit(X_train, y_train, batch_size=batch_size, nb_epoch=nb_epoch, 
                       validation_split=0.05, callbacks=[early_stopping], verbose=2)
             # evaluation
