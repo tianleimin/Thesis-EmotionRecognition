@@ -165,10 +165,10 @@ for time_step in time_steps:
             print('Weighted F1-score on test set:', tst_f1)
             # print grid search log
             with open(file_log, 'a') as logfile:
-                logfile.write('\n================================ No. %s of 27 ========================================' % count)
+                logfile.write('\n================================ No. %s of 27 ========================================\n' % count)
                 logfile.write('F1 = %s; Parameters: time_step = %s, [h1, h2, h3] = %s, attention_width = %s\n' % (tst_f1, time_step, lstm_size, attention_width))
-                logfile.write('Confusion Matrix on test set')
-                logfile.write(confusion_matrix(y_test_non_category, y_predict_non_category))           
+                logfile.write('Confusion Matrix on test set\n')
+                np.savetxt(logfile, confusion_matrix(y_test_non_category, y_predict_non_category))           
             count = count + 1
 
 # save the best parameter set and its predictions
