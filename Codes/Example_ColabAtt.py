@@ -49,7 +49,7 @@ nb_epoch = 1000 # number of total epochs to train the model
 # optimization function
 opt_func = Adamax(lr=0.0005, beta_1=0.9, beta_2=0.999, epsilon=1e-08) 
 # to prevent over-fitting
-early_stopping = EarlyStopping(monitor='loss', patience=50)
+early_stopping = EarlyStopping(monitor='loss', patience=10)
 
 # data files
 # access data from Google Drive
