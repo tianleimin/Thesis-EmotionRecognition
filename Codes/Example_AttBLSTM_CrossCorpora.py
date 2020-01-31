@@ -1,17 +1,5 @@
-# -*- coding: utf-8 -*-
-
-# Using Google Colab (Python 3 + TPU)
 # Attention-BLSTM emotion classification (Arousal)
 # Use GP+DIS-NV features, train on both databases and test on a subset of IEMOCAP
-
-'''
-To prevent Colab from time out, go to the google Colab console (ctrl+shift+i) and type:
-function ClickConnect(){console.log("Working");document.querySelector("colab-toolbar-button#connect").click()}setInterval(ClickConnect,60000)
-
-Don't exit the console until you get "Working" as the output in the console window. 
-It would keep on clicking the page and prevent it from disconnecting.
-Make sure you dont run anything for more than 12 hrs on Colab!
-'''
 
 # import the required modules
 from __future__ import print_function
@@ -31,8 +19,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import normalize,LabelEncoder
 from sklearn.utils import class_weight
 
-# Attention implemented by https://github.com/CyberZHG/keras-self-attention
-!pip install keras-self-attention 
+# Attention implemented by https://github.com/CyberZHG/keras-self-attention 
 from keras_self_attention import SeqSelfAttention
 
 # define variables
@@ -52,15 +39,12 @@ opt_func = Adamax(lr=0.0005, beta_1=0.9, beta_2=0.999, epsilon=1e-08)
 early_stopping = EarlyStopping(monitor='loss', patience=10)
 
 # data files
-# access data from Google Drive
-from google.colab import drive
-drive.mount('/content/drive')
-file_log = '/content/drive/My Drive/ColabAtt_example_log.txt'
-file_pred = '/content/drive/My Drive/ColabAtt_example_pred.txt'
-file_emo_tst = '/content/drive/My Drive/IEMOCAP_emo_seg.csv' # retained a subset for testing after parameter optimisation
-file_feat_tst = '/content/drive/My Drive/IEMOCAP_GP+DN_seg.csv' # retained a subset for testing after parameter optimisation
-file_emo_trn = '/content/drive/My Drive/utt_AVEC_emo.csv'
-file_feat_trn = '/content/drive/My Drive/utt_AVEC_GP+DN.csv'
+file_log = '/Output/Example_AttBLSTM_CrossCorpora_log.txt'
+file_pred = '/Output/Example_AttBLSTM_CrossCorpora_pred.txt'
+file_emo_tst = '/Data/IEMOCAP_emo_seg.csv' # retained a subset for testing after parameter optimisation
+file_feat_tst = '/Data/IEMOCAP_GP+DN_seg.csv' # retained a subset for testing after parameter optimisation
+file_emo_trn = '/Data/utt_AVEC_emo.csv'
+file_feat_trn = '/Data/utt_AVEC_GP+DN.csv'
 
 # turn off the warnings, be careful when use this
 import warnings
@@ -71,9 +55,9 @@ def reshape_data(data, n_prev):
     docX = []
     for i in range(len(data)):
         if i < (len(data)-n_prev):
-            docX.append(data.iloc[i:i+n_prev].as_matrix())
+            docX.append(data.iloc[i:i+n_prev].values)
         else: # the frames in the last window use the same context
-            docX.append(data.iloc[(len(data)-n_prev):len(data)].as_matrix())
+            docX.append(data.iloc[(len(data)-n_prev):len(data)].values)
     alsX = np.array(docX)
     return alsX
 
