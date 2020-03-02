@@ -1,6 +1,6 @@
 # Example codes of unimodal emotion recognition
 
-For experiments on a single database we perform 10-fold cross validation
+For LSTM experiments on a single database we perform 10-fold cross validation (5-fold for BLSTM with parameter grid search)
 
 For cross corpora experiments we perform training on one database and testing on another one, as well as training on merged databases
 
